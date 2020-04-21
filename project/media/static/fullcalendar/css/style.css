@@ -1,0 +1,44 @@
+#calendar {
+    max-width: 900px;
+    margin: 40px auto;
+}
+#calendar .fc-day{
+    transition: all .4s;
+}
+
+#calendar .fc-day-header{
+    transition: all .4s;
+    background-color: #f2f2f2;
+}
+
+#calendar .fc-day:hover{
+    background: rgba(243, 128, 128, 0.3);;
+}
+
+#calendar .fc-highlight:after{
+    duration: 0.4;
+}
+
+#external-events {
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  left: 20px;
+  width: 500px;
+  height: 150px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+#external-events .fc-event {
+  margin: 20px 0 2em 2em;
+  cursor: move;
+  float: left;
+}
+
+/*
+#calendar .fc-event:hover {
+    cursor: move;
+}
+*/

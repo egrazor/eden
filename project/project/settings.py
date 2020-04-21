@@ -14,7 +14,7 @@ import os
 import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 sys.path.append(os.path.join(BASE_DIR, 'project', 'apps'))
 
@@ -42,9 +42,11 @@ INSTALLED_APPS = [
 
     # 3rd party
     'debug_toolbar',
+    'bootstrap4',
 
     # my
     'apps.cources',
+    'apps.fullcalendar'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,8 @@ TEMPLATES = [
         },
     },
 ]
+
+INTERNAL_IPS = ('127.0.0.1',)
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -138,6 +142,12 @@ STATICFILES_DIRS = (
     os.path.join(MEDIA_ROOT, 'static'),
 )
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'project', 'media', 'static')
+
+
+# def show_debug_toolbar():
+#     if DEBUG == True:
+#         return True
+#     return False
 
 
