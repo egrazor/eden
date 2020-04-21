@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # 3rd party
     'debug_toolbar',
     'bootstrap4',
+    'rest_framework',
 
     # my
     'apps.cources',
@@ -65,7 +66,9 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'project', 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,9 +148,11 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'project', 'media', 'static')
 
 
-# def show_debug_toolbar():
-#     if DEBUG == True:
-#         return True
-#     return False
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+
+}
 
 

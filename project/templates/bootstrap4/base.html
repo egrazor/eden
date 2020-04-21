@@ -1,0 +1,18 @@
+{% extends 'bootstrap4/include.html' %}
+
+{% load static %}
+
+{% block nav %}
+
+<nav class="nav">
+    <ul>
+        <li><a href="{% url 'cources:index' %}">Главная</a></li>
+        <li><a href="{% url 'fullcalendar:index' %}">Календарь</a></li>
+        <li><a href="/calendar/events/">События API</a></li>
+    </ul>
+</nav>
+
+{% endblock nav %}
+
+{% block content %}
+{% endblock content %}

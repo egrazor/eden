@@ -16,14 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.shortcuts import render
+from django.http import request
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cources/', include("apps.cources.urls")),
-    path('calendar/', include("apps.fullcalendar.urls")),
-
+    path('', include("apps.cources.urls", namespace="cources")),
+    path('calendar/', include("apps.fullcalendar.urls", namespace="fullcalendar")),
+    path('api-auth/', include("rest_framework.urls", namespace="rest_framework")),
 ]
+
+
+
 
 if settings.DEBUG:
     import debug_toolbar

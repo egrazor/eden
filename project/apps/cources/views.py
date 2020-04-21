@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-     return HttpResponse('Привет, мир!')
+    template_name = "bootstrap4/index.html"
+    return render(request, template_name)
