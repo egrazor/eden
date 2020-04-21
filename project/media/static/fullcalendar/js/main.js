@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
         plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'bootstrap'],
         header: {
             right: 'listWeek, today prev, next',
-            center: 'title',
-            left: 'dayGridMonth, timeGridWeek, timeGridDay'
+            left: 'title',
+        },
+        footer: {
+            center: 'dayGridMonth, timeGridWeek, timeGridDay',
         },
         buttonText: {
             today: 'сегодня',
@@ -25,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
             minute: '2-digit',
             meridiem: false,
         },
+        minTime: "08:00",
+        maxTime: "20:00",
+        aspectRatio: 1.0,
         events: '/calendar/all_events/',
 
         dateClick: function(info) {
