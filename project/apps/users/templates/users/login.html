@@ -1,0 +1,24 @@
+{% extends 'bootstrap4/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<form class="form-signin" style="margin:30%;">
+  <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Пожалуйста, войдите в свою учётную запись</h1>
+  <label for="inputEmail" class="sr-only">Ваш email-адрес</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+  <label for="inputPassword" class="sr-only">Пароль</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Запомнить меня
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+  <p class="mt-5 mb-3 text-muted">© 2020</p>
+</form>
+
+
+{% endblock main %}

@@ -47,7 +47,8 @@ INSTALLED_APPS = [
 
     # my
     'apps.cources',
-    'apps.fullcalendar'
+    'apps.fullcalendar',
+    'apps.users',
 ]
 
 MIDDLEWARE = [

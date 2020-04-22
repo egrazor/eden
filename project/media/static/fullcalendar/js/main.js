@@ -2,20 +2,25 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'bootstrap'],
+        schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'resourceTimeline', 'bootstrap'],
         header: {
-            right: 'listWeek, today prev, next',
-            left: 'title',
+            right: 'prev, next today',
+            center: 'left',
         },
         footer: {
-            center: 'dayGridMonth, timeGridWeek, timeGridDay',
+            right: 'list',
+            right: 'dayGridMonth, timeGridWeek, timeGridDay',
+            left: 'resourceTimelineWeek, resourceTimelineDay,'
         },
         buttonText: {
             today: 'сегодня',
             month: 'месяц',
             week: 'неделя',
             day: 'день',
-            list: 'список событий'
+            list: 'список событий',
+            resourceTimelineWeek: 'неделя (по аудиториям)',
+            resourceTimelineDay: 'день (по аудиториям)',
         },
         defaultView: 'timeGridWeek',
         allDaySlot: false,
@@ -30,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         minTime: "08:00",
         maxTime: "20:00",
         aspectRatio: 1.0,
-        events: '/calendar/all_events/',
+        events: '/calendar/events/',
+        resources: '/calendar/resources/',
 
         dateClick: function(info) {
             $('#dialog').dialog('open');

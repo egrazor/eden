@@ -3,8 +3,8 @@ from django.http import HttpResponse
 
 from rest_framework import generics, viewsets
 
-from .models import Event
-from .serializers import EventSerializer
+from .models import Event, Resource
+from .serializers import EventSerializer, ResourceSerializer
 
 
 def index(request):
@@ -16,11 +16,11 @@ def add_event(request):
     return HttpResponse(request.POST)
 
 
-class EventsView(generics.ListAPIView):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
-
-
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+
+class ResourceViewSet(viewsets.ModelViewSet):
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer

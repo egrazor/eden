@@ -17,6 +17,10 @@
     background: rgba(243, 128, 128, 0.3);;
 }
 
+#calendar .fc-event {
+    color: #fff;
+}
+
 #calendar .fc-highlight:after{
     duration: 0.4;
 }
