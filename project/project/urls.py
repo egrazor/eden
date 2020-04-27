@@ -22,13 +22,11 @@ from django.http import request
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("apps.cources.urls", namespace="cources")),
-    path('', include("apps.users.urls", namespace='users')),
-    path('calendar/', include("apps.fullcalendar.urls", namespace="fullcalendar")),
+    path('', include("cources.urls", namespace="cources")),
+    path('users/', include("users.urls", namespace='users')),
+    path('calendar/', include("fullcalendar.urls", namespace="fullcalendar")),
     path('api-auth/', include("rest_framework.urls", namespace="rest_framework")),
 ]
-
-
 
 
 if settings.DEBUG:

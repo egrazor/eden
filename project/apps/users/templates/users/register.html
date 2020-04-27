@@ -1,0 +1,30 @@
+{% extends 'bootstrap4/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<form method="post" action="{% url 'users:register' %}" class="form-signin" style="margin:30%;">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Регистриция нового пользователя</h1>
+    <label for="username">Логин</label>
+    <input type="text" id="username" class="form-control"
+         required autofocus="" name="username">
+    <label for="password1">Пароль</label>
+     <input type="password" id="password1" class="form-control"
+            required name="password1">
+        <label for="password2">Повторите Пароль</label>
+     <input type="password" id="password2" class="form-control"
+            required name="password2">
+    <label for="first_name">Имя</label>
+    <input type="text" id="first_name" class="form-control" name="fisrt_name">
+    <label for="last_name">Фамилия</label>
+    <input type="text" id="last_name" class="form-control" name="last_name">
+    <label for="email">Email</label>
+    <input type="email" name="email" required id="email" class="form-control">
+
+    <button name="submit" type="submit">Зарегистрироваться</button>
+    <input type="hidden" name="text" value="{% url 'cources:index' %}">
+</form>
+
+{% endblock main %}

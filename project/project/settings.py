@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # my
-    'apps.cources',
-    'apps.fullcalendar',
-    'apps.users',
+    'cources',
+    'fullcalendar',
+    'users',
 ]
+
+AUTH_USER_MODEL = 'users.EdenUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

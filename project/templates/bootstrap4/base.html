@@ -34,7 +34,13 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="hidden" readonly>
-      <a class="btn btn-outline-success my-2 my-sm-0" type="button" href="{% url 'users:login' %}">Войти</a>
+        {% if user.is_authenticated %}
+        <a class="nav-link" href="#">Hello, {{ user.username }}</a>
+        <a class="btn btn-outline-success my-2 my-sm-0" type="button" href="{% url 'users:logout' %}">Выйти</a>
+        {% else %}
+         <a class="nav-link" href="{% url 'users:register' %}">Регистрация</a>
+        <a class="btn btn-outline-success my-2 my-sm-0" type="button" href="{% url 'users:index' %}">Войти</a>
+        {% endif %}
     </form>
   </div>
 </nav>
