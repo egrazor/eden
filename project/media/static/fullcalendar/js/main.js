@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         defaultView: 'timeGridWeek',
         allDaySlot: false,
         firstDay: 1,
-        themeSystem: 'bootstrap',
-        // добавил новую строку
+        themeSystem: 'standart',
         locale: 'ru',
         eventTimeFormat: {
             hour: 'numeric',
