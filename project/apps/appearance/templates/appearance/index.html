@@ -1,0 +1,61 @@
+{% extends 'appearance/base.html' %}
+
+{% load static %}
+
+{% block header %}
+<h1>Главная страница</h1>
+{% endblock header %}
+
+
+{% block sidebar1 %}
+<div id="sidebar1" class="aside">
+
+    <details>
+        <summary>Навигация</summary>
+        <ul>
+            <li>
+                <details>
+                    <summary>Факультет 1</summary>
+                    <ul>
+                        <li>Кафедра 1</li>
+                        <li>Кафедра 2</li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Факультет 2</summary>
+                    <ul>
+                        <li>Кафедра 1</li>
+                        <li>Кафедра 2</li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </details>
+
+</div>
+{% endblock sidebar1 %}
+
+
+    {% block sidebar2 %}
+<div id="sidebar2" class="aside">
+
+    <h2>1914 translation by H. Rackham</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout.</p>
+                <h3>Options</h3>
+                <ul>
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                </ul>
+
+</div>
+{% endblock sidebar2 %}
+
+
+
+{% block content %}
+<p>Контент главной страницы</p>
+{% endblock content %}

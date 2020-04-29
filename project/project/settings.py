@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'bootstrap4',
     'rest_framework',
+    'dbbackup', # django-dbbackup
 
     # my
+    'appearance',
     'cources',
     'fullcalendar',
     'users',
@@ -102,6 +104,11 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
+
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': '/var/backups'}
+
 
 
 # Password validation
