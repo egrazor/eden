@@ -10,29 +10,35 @@
 {% block sidebar1 %}
 <div id="sidebar1" class="aside">
 
-    <details>
-        <summary>Навигация</summary>
-        <ul>
-            <li>
-                <details>
-                    <summary>Факультет 1</summary>
-                    <ul>
-                        <li>Кафедра 1</li>
-                        <li>Кафедра 2</li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary>Факультет 2</summary>
-                    <ul>
-                        <li>Кафедра 1</li>
-                        <li>Кафедра 2</li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
-    </details>
+<ul class="sidebar1">
+    {% for faculty in faculties %}
+    <li>
+        <details>
+            <summary>{{ faculty }}</summary>
+            <ul class="sub-sidebar1">
+                {% for department in departments %}
+
+                    {% if department.faculty == faculty %}
+                    <li>
+                        <details>
+                            <summary>{{ department }}</summary>
+                            <ul class="sub-sidebar1">
+                                {% for direct in directions %}
+                                    {% if direct.department == department %}
+                                    <li>{{ direct }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </details>
+                    </li>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+        </details>
+    </li>
+    {% endfor %}
+</ul>
 
 </div>
 {% endblock sidebar1 %}

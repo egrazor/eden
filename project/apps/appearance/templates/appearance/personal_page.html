@@ -1,0 +1,16 @@
+{% extends 'appearance/index.html' %}
+
+{% block sidebar2 %}
+<div style="width:100px; heigth:500px; color: green;">
+    <p>Важный виджет 1</p>
+</div>
+
+<div style="width:100px; heigth:500px; color: blue;">
+    <p>Важный виджет 2</p>
+</div>
+
+{% endblock sidebar2 %}
+
+{% block content %}
+<h1>Hello, {{ user.username }}</h1>
+{% endblock content %}
